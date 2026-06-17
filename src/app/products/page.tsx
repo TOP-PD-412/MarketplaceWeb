@@ -1,16 +1,16 @@
-import { ProductsApi } from "../modules/products/api/products-api";
+import ProductCardsList from "../components/shared/products/card-list";
+import productsApi from "../modules/products/api/products-api";
 
-export default async function Products() {
-  const products = await ProductsApi.getAllProducts();
+export default async function ProductsPage() {
+  const products = await productsApi.getAllProducts();
 
   return (
-    <main className="p-8">
-      <h1 className="mb-4 text-3xl font-bold">Products</h1>
-      <ul>
-        {products.map((product) => (
-          <li key={product.id}>{product.name}</li>
-        ))}
-      </ul>
+    <main className="w-full h-min-full p-8 flex flex-col items-stretch gap-8">
+      <h2 className="text-center text-3xl font-bold">Products</h2>
+      <ProductCardsList cards={products} />
     </main>
   );
 }
+
+
+
