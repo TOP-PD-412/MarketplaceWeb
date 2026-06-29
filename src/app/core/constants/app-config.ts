@@ -1,5 +1,5 @@
 export class AppConfig {
-    public readonly productsApiHost = process.env.PRODUCTS_API_HOST || "http://localhost:5032";
+    public readonly apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5032";
 }
 
 export default new AppConfig();
