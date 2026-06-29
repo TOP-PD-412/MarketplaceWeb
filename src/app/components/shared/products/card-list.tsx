@@ -1,8 +1,8 @@
-import { Product } from "@/app/modules/products/types/product";
+import { ProductPreview } from "@/app/modules/products/types/product-preview";
 import ProductCard, { ProductCardProps } from "./card";
 
 export type ProductCardsListProps = {
-    cards: (ProductCardProps & Pick<Product, 'id'>)[];
+    cards: (ProductCardProps & Pick<ProductPreview, 'id'>)[];
 }
 
 export default function ProductCardsList({ cards }: Readonly<ProductCardsListProps>) {
